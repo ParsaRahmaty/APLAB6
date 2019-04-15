@@ -21,7 +21,7 @@ public class Department {
     }
 
     public void addStudent(Student student){
-		if (student != null)
+		if (student != null && student.getDepartment().getName() == name)
 			students.add(student);
     }
 
@@ -38,7 +38,7 @@ public class Department {
     }
 
     public void addCourse(Course course){
-		if (course != null)
+		if (course != null && course.getDepartment().getName().equals(name))
 			courses.add(course);
     }
 
@@ -55,7 +55,7 @@ public class Department {
     }
 
     public void addProfessor(Professor professor){
-		if (professor != null)
+		if (professor != null && professor.getDepartment().getName().equals(name))
 			professors.add(professor);
     }
 
@@ -68,7 +68,7 @@ public class Department {
 
     public void removeProfessor(Professor professor){
 		if (professors.contains(professor))
-			professors.remove(professors);
+			professors.remove(professor);
     }
 
 }
